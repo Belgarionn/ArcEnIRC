@@ -1,3 +1,0 @@
-# ArcEnIRC
-
-Random color irc
