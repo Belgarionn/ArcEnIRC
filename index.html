@@ -1,76 +1,92 @@
 <!DOCTYPE html>
 <html>
-	<style>
-	
-	body{
-		margin: auto;
-	width: 50%;
-  
-	padding: 10px;
-	text-align : center;
-	background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-	
-	}
-	button{
-	background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-	margin : 20px;
-	color : white;
-	
-	}
-	h1{
-	background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-	font-size : 80px;
-	
-	}
-	textarea{
-	background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-	
-	
-	}
-	
-	</style>
-  <body>
-  <h1>ARC-EN-CIEL-IFEUR</h1>
-    <textarea id="test" type="text" rows = "20" cols="100"></textarea ><br>
-    <button onclick="go('test')" id="testButton">RAINBOW</button> <button onclick="rand('test')" id="testButton">RANDOM</button>
-	<br>
-    <textarea id="demo" rows = "20" cols="100"></textarea >
+<style>
+    body {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+        text-align: center;
+        background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    }
+    
+    button {
+        background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+        margin: 20px;
+        color: white;
+    }
+    
+    h1 {
+        background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 80px;
+    }
+    
+    textarea {
+        background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+    }
+</style>
+
+<body>
+    <h1>ARC-EN-CIEL-IFEUR</h1>
+    <textarea id="test" type="text" rows="20" cols="100"></textarea>
+    <br>
+    <button onclick="go('test')" id="testButton">RAINBOW</button>
+    <button onclick="rand('test')" id="testButton2">RANDOM</button>
+    <button onclick="owo('test')" id="testButton3">OWO</button>
+    <br>
+    <textarea id="demo" rows="20" cols="100"></textarea>
 
     <script>
-      function go(id) {
-        var colors = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-        var icolors = Math.floor(Math.random() * colors.length);
-        var phrase = document.getElementById(id).value;
-       
-        var output = "";
+        function go(id) {
+            var colors = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+            var icolors = Math.floor(Math.random() * colors.length);
+            var phrase = document.getElementById(id).value;
 
-        for (var i in phrase) {
-          output += "\" + colors[icolors] + phrase[i];
-          icolors++;
-          if (icolors >= colors.length)
-            icolors = 0;
+            var output = "";
 
+            for (var i in phrase) {
+                output += "\" + colors[icolors] + phrase[i];
+                icolors++;
+                if (icolors >= colors.length)
+                    icolors = 0;
+
+            }
+            document.getElementById("demo").innerHTML = output;
         }
-        document.getElementById("demo").innerHTML = output;
-      }
-	function rand(id) {
-        var colors = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-        var icolors = Math.floor(Math.random() * colors.length);
-        var phrase = document.getElementById(id).value;
-       
-        var output = "";
 
-        for (var i in phrase) {
-          output += "\" + colors[icolors] + phrase[i];
-          icolors = Math.floor(Math.random() * colors.length);
+        function rand(id) {
+            var colors = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+            var icolors = Math.floor(Math.random() * colors.length);
+            var phrase = document.getElementById(id).value;
 
+            var output = "";
+
+            for (var i in phrase) {
+                output += "\" + colors[icolors] + phrase[i];
+                icolors = Math.floor(Math.random() * colors.length);
+
+            }
+            document.getElementById("demo").innerHTML = output;
         }
-        document.getElementById("demo").innerHTML = output;
-      }
+
+        function owo(id) {
+            var phrase = document.getElementById(id).value;
+            var lower = phrase.toLowerCase();
+            var upper = phrase.toUpperCase();
+            var output = "";
+            var test = Math.floor(Math.random() * 2)
+            for (var i in phrase) {
+                if (i % 2 == test) {
+                    output += upper[i];
+                } else
+                    output += lower[i];
+
+            }
+            document.getElementById("demo").innerHTML = output;
+        }
     </script>
 
-  </body>
+</body>
 
 </html>
